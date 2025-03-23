@@ -1,167 +1,220 @@
 
-/* Step 1:Animate the logo with keyframes.  (Here is a keyframes reference.) It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded. */
+/* [Table of contents for default view]
+1.Logo Animation
+1.Body
+3.Header
+4.Navigation Links
+5.Card Class
+6.Pricing Class
+7.Gallery Class */
+
+/* [Table of contents for 900px view or greater]
+1.Header
+2.First Header
+3.Navigation Links
+4.Pricing Class
+5.Card Class */
+
+/* [Table of contents for reduced media query]
+1. No Logo Animation */
+
+/* [Table of contents for print view in portrait mode]
+1.Page
+2.Body
+3.Navigation
+4.Navigation Links
+5.Pricing class
+6.Card class
+7.Gallery
+8.Thumbs-up entity */
+
+/* Keyframes Logo Animation */
 @keyframes mymove {
-    0%   { opacity: 0; width: 25px;}
-    100% { opacity:1;width: 475px;}
+    0%   { opacity: 0; width: 25px;} /* Grows from width of 25px and opacity of 0 */
+    100% { opacity:1;width: 475px;} /* Grows to width of 475px and opacity of 1 */
   }
 
+/* Logo id */
 #logo{
-    width: 25px;
-    animation: mymove 5s ease-in-out forwards;
+    width: 25px; /* Logo starts from the width of 25px */
+    animation: mymove 5s ease-in-out forwards; /* animation loads for 5 seconds when page is loaded */
 }
 
-/* Step 2: Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1. */
+/* Body */
 body{
-    font-family: "Poppins", serif;
-    background-image: url("../images/concrete_seamless.png");
-    background-color: #f1f1f1;
+    font-family: "Poppins", serif; /* Font family of Poppins with serif as backup */
+    background-image: url("../images/concrete_seamless.png"); /* use concrete_seamless.png as background image */
+    background-color: #f1f1f1; /* background color of #f1f1f1 */
 }
-/* Step 3: Edit the css for the header tag (all instances) to use flex to match our example. */
+
+/* Header */
 header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* enables flexbox display */
+    flex-direction: column; /* stacks the elements vertically */
+    align-items: center; /* stacks the elements horizontally */
 }
-/* Step 4:Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex. */
+
+/* Navigation links class */
 .nav_links{
-    display: flex;
-    flex-direction: column;
+    display: flex; /* enables flexbox display */
+    flex-direction: column; /* stacks the elements vertically */
 }
-/* Step 5:Style the links so that they have the same color even after they have been visited. */
+
+/* Navigation links */
 .nav_links li a, .nav_links li a:visited{
-    color: #0000EE;
+    color: #0000EE; /* navigation links to have same color even after visited */
 }
 
-
-/* Step 6:
-background: #288088,
-solid 2px border using #45ADAD,
-20px of padding on the top and the bottom,
-50px border-radius on the top left and right corners.
-. */
-
+/* Header elements that are direct children of Card class */
 .card > header{
-    background: #288088;
-    border: solid 2px #45ADAD;
-    padding: 20px 0px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    background: #288088; /* background color of #288088 */
+    border: solid 2px #45ADAD; /* solid 2px border with color of #45ADAD */
+    padding: 20px 0px; /* 20px of padding on the top and the bottom, */
+    border-top-left-radius: 50px; /* 50px border-radius on the top left corner */
+    border-top-right-radius: 50px; /* 50px border-radius on the top right corner */
 
 }
+
+/* Card class */
 .card{
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    border-top-left-radius: 50px; /* 50px border-radius on the top left corner */
+    border-top-right-radius: 50px; /* 50px border-radius on the top right corner */
+    flex-basis:450px; /* sets the initial size of a flex item to 450px */
 }
 
-/* Step 7:Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px. */
-.card{
-    flex-basis:450px;
-}
-/* Step 8: Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically. */
+/* Pricing class */
 .pricing{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    display: flex; /* enables flexbox display */
+    flex-flow: row wrap; /* arrange items in row and wraps them */
+    justify-content: center; /* centers content horizontally in the container */
 }
-/* Step 9:Style the images in the gallery class. These elements will have a solid 10px border with a color of #50C7C7, 10px margin on all four sides and a width of 300px. */
+
+/* Images in Gallery Class */
 .gallery > img{
-    border: solid 10px #50C7C7;
-    margin: 10px;
-    width: 300px;
+    border: solid 10px #50C7C7; /* Solid 10px border with color of #50C7C7 */
+    margin: 10px; /* 10px margin on all four sides */
+    width: 300px; /* Width of 300px */
 }
 
-/* Step 10:Edit the css for the gallery class to use flex to match our example. */
+/* Gallery class */
 .gallery{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
+    display: flex; /* enables flexbox display */
+    flex-wrap: wrap; /* allows items to wrap to the next row */
+    justify-content: center; /* centers content horizontally in the container */
+    align-items: stretch; /* stretches items to match tallest items in the container */
 }
 
+/* Media query for screen size greater than 900px */
 @media all and (min-width: 900px) {
+    /* Header */
+
     header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        display: flex; /* enables flexbox display */
+        flex-direction: row; /* arranges items in the row */
+        justify-content: space-between; /* places the elements at both ends with the space in between them */
+        align-items: center;  /* aligns the items vertically in the center */
     }
+    /* Navigation Links */
+    .nav_links{
+        display: flex; /* enables flexbox display */
+        flex-direction: row; /* arranges items in the row */
+    }
+    /* Card class */
+    .card{
+        flex-basis:275px; /* sets the initial size of a flex item to 275px */
+    }
+    /* Pricing class */
+    .pricing{
+        display: flex; /* enables flexbox display */
+        align-items: center; /* aligns the items vertically in the center */
+    }
+    /* First header that is not inside main */
     body > header{
-        position: sticky;
+        position: sticky; /* sticky position ensures that it is always visible */
         top:0;
         left:0;
         width: 100%;
     }
-    .nav_links{
-        display: flex;
-        flex-direction: row;
-    }
-    .card{
-        flex-basis:275px;
-    }
-    .pricing{
-        display: flex;
-        align-items: center;
-    }
-    /* Step 13:Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. */
 }
+/* Prefers reduced motion media query */
 @media (prefers-reduced-motion) {
-    /* styles to apply if a user's device settings are set to reduced motion */
+
+    /* Code taken from the keyframe logo animation above */
     @keyframes mymove {
         0%   { opacity: 0; width: 25px;}
         100% { opacity:1;width: 475px;}
       }
+      /* Logo id */
     #logo{
-        width: 475px;
-        animation: none;
+        width: 475px; /* width of 475px */
+        animation: none; /* no animation */
     }
   }
-
+/* Print Mode */
   @media print{
+    /* Page */
     @page{
-        size:portrait;
+        size:portrait; /* Page size in portrait mode */
 
     }
+
+    /* Body */
     body{
-        font-family: Arial, Helvetica;
-        background-image: none;
+        font-family: Arial, Helvetica; /* Font family of Arial with Helevetica as backup */
+        background-image: none; /* no background image*/
         }
+
+    /* Navigation */
     nav{
-        display:flex;
-        flex-direction: row;
+        display:flex; /* enables flexbox display */
+        flex-direction: row; /* arranges items in the row */
         width: 100%;
     }
+
+    /* Navigation Links */
     .nav_links{
-        display:flex;
-        flex-direction: row;
-        justify-content: center;
+        display:flex; /* enables flexbpx display */
+        flex-direction: row; /* arranges items in the row */
+        justify-content: center; /* centers content horizontally in the container */
     }
+
+    /* List in Navigation Links */
     ul.nav_links{
-        display:flex;
-        flex-direction: row;
-        justify-content: space-around;
+        display:flex; /* enables flexbpx display */
+        flex-direction: row; /* arranges items in the row */
+        justify-content: space-around; /* places each item in equal spacing in both left and right direction from each other */
         width: 100%;
     }
+
+    /* Pricing class */
     .pricing{
-        display: flex;
-        align-items: flex-end;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        display: flex; /* enables flexbox display */
+        align-items: flex-end; /* puts the items at the bottom of the container */
+        flex-direction: row; /* arranges items in the row */
+        flex-wrap: nowrap;  /* prevents wrapping of items to the next line */
     }
+
+    /* Card class */
     .card{
-        border: solid 2px #45ADDD;
-        flex-basis: 325px;
+        border: solid 2px #45ADDD; /* Solid 2px border with color of #45ADDD*/
+        flex-basis: 325px; /* sets the initial size of a flex item to 325px */
     }
+
+    /* Gallery id */
    #gallery{
-        display: none;
+        display: none; /* "Gallery" text is not visible*/
    }
+
+   /* Gallery class */
    .gallery{
-        display: none;
+        display: none; /* Images within gallery class are not visible*/
    }
-   /* Step 21: Without using list-style-type add the thumbs up entity as shown in the cards. */
+
+   /* Second list item within Card Class */
    .card ul li:nth-child(2){
-    display: inline;
+    display: inline; /* makes the second list item inline to make it flow with the text */
    }
    .card ul li:nth-child(2)::after{
-    content: " 👍";
+    content: " 👍";  /* adds thumbs-up entity after second list item */
     }
-}
+  }
