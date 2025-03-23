@@ -1,0 +1,167 @@
+
+/* Step 1:Animate the logo with keyframes.  (Here is a keyframes reference.) It should start at a width of 25px and grow to 475px.  It should also start with an opacity of 0 and end with an opacity of 1. The animation should take 5 seconds and only happen when the page is loaded. */
+@keyframes mymove {
+    0%   { opacity: 0; width: 25px;}
+    100% { opacity:1;width: 475px;}
+  }
+
+#logo{
+    width: 25px;
+    animation: mymove 5s ease-in-out forwards;
+}
+
+/* Step 2: Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.  It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1. */
+body{
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+/* Step 3: Edit the css for the header tag (all instances) to use flex to match our example. */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Step 4:Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex. */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+/* Step 5:Style the links so that they have the same color even after they have been visited. */
+.nav_links li a, .nav_links li a:visited{
+    color: #0000EE;
+}
+
+
+/* Step 6:
+background: #288088,
+solid 2px border using #45ADAD,
+20px of padding on the top and the bottom,
+50px border-radius on the top left and right corners.
+. */
+
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+}
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* Step 7:Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px. */
+.card{
+    flex-basis:450px;
+}
+/* Step 8: Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically. */
+.pricing{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+/* Step 9:Style the images in the gallery class. These elements will have a solid 10px border with a color of #50C7C7, 10px margin on all four sides and a width of 300px. */
+.gallery > img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Step 10:Edit the css for the gallery class to use flex to match our example. */
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+@media all and (min-width: 900px) {
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    body > header{
+        position: sticky;
+        top:0;
+        left:0;
+        width: 100%;
+    }
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+    .card{
+        flex-basis:275px;
+    }
+    .pricing{
+        display: flex;
+        align-items: center;
+    }
+    /* Step 13:Modify the first header (the one not inside main) so that it remains visible at the top of the screen even as we scroll down. Make sure that it is always visible. */
+}
+@media (prefers-reduced-motion) {
+    /* styles to apply if a user's device settings are set to reduced motion */
+    @keyframes mymove {
+        0%   { opacity: 0; width: 25px;}
+        100% { opacity:1;width: 475px;}
+      }
+    #logo{
+        width: 475px;
+        animation: none;
+    }
+  }
+
+  @media print{
+    @page{
+        size:portrait;
+
+    }
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+        }
+    nav{
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .nav_links{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    ul.nav_links{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .pricing{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+   #gallery{
+        display: none;
+   }
+   .gallery{
+        display: none;
+   }
+   /* Step 21: Without using list-style-type add the thumbs up entity as shown in the cards. */
+   .card ul li:nth-child(2){
+    display: inline;
+   }
+   .card ul li:nth-child(2)::after{
+    content: " 👍";
+    }
+}
